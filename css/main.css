@@ -45,14 +45,19 @@
     display: inline-block;
     margin-top: 1rem;
     font-size: 1.25rem;
-    margin-right: 1rem;    
+    margin-right: 1rem;   
+}
+.main-section__social-networks i {
+    transition: all .3s ease-in-out; 
+
 }
 .main-section__social-networks a:hover i{
-    color: blue;
+    color: #05364d;
+
 }
 /* Main section styles */
 
-/* Statistics */
+/* Statistics styles */
 .statistics{
     padding-top: 6.25rem;
 }
@@ -68,18 +73,26 @@
     font-size: 1.6rem;
     margin-bottom: 0.3rem;
     background: linear-gradient(90deg, #1345e6 0%, #ed239f 100%);
+    background-size: -100% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.statistics__number:hover {
+    background-position: right center;
+    background-size: 200% auto;
+
 }
 .statistics__title{
     color: #797979;
     font-weight: 300;
     font-size: 1rem;
-
+    cursor: default;
 }
-/* Statistics */
+/* Statistics styles */
 
-/* About me section */
+/* About me styles */
 .about-me{
     padding: 6.25rem 0;
 }
@@ -100,9 +113,9 @@
 .about-me__action{
     margin-top: 2rem;
 }
-/* About me section */
+/* About me styles */
 
-/* Services section */
+/* Services styles */
 .services{
     padding: 6.25rem 0;
 }
@@ -146,9 +159,9 @@
     color: white;
 
 }
-/* Services section */
+/* Services styles */
 
-/* Clinets section */
+/* Clinets styles */
 .clients{
     padding: 6.25rem 0;
 }
@@ -181,9 +194,9 @@
 .client-item__rate {
     color: #FFD805;
 }
-/* Clinets section */
+/* Clinets styles */
 
-/* Portfolio section */
+/* Portfolio styles */
 .portfolio{
     padding: 6.25rem 0;
 }
@@ -237,9 +250,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(19,69,230,0.9);
     z-index: 1;
-    visibility: hidden;
+    transition: all .3s ease;
 }
 .portfolio-item__info {
     position: absolute;
@@ -249,6 +261,8 @@
     visibility: hidden;
     z-index: 1;
     cursor: pointer;
+    opacity: 0;
+    transition: all .4s ease 0s;
 }
 .portfolio-item__info a {
     color: #fff;
@@ -258,15 +272,17 @@
     visibility: visible;
     top: 20px;
     left: 20px;
+    background: rgba(19,69,230,0.9);
 }
 .portfolio-item:hover .portfolio-item__info {
     visibility: visible;
     bottom: 24px;
     left: 60px;
+    opacity: 1;
 }
-/* Portfolio section */
+/* Portfolio styles */
 
-/* Blog section */
+/* Blog styles */
 .blog {
     padding-top: 6.25rem;
 }
@@ -285,6 +301,7 @@
 .blog-item__image {
     overflow: hidden;
     transition: 1s ease;
+    transition: all .2s ease;
 }
 .blog-item:hover .blog-item__image img{
     transform: scale(1.1);
@@ -330,9 +347,9 @@
 .blog-item__learn-more:hover {
     color: #ed239f;
 }
-/* Blog section */
+/* Blog styles */
 
-/* Partners section */
+/* Partners styles */
 .partners{
     padding-top: 6.25rem;
 }
@@ -340,49 +357,26 @@
     display: inline-block;
     padding: 0 1.87rem;
 }
-/* Partners section */
+/* Partners styles */
 
-@media screen and (max-width: 767px) {
-    /* Main section */
-  .main-banner {
-      background-image: none;
-      min-height: auto;
-  }
-  .main-section__image {
-      display: none;
-  }
-  .main-section__action {
-      display: none;
-  }
-  .main-section > div {
-      width: 100%;
-  }
-    /* Main section */
-
-    /* Statistics */
-  .statistics__item {
-      width: 90%;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      margin-bottom: 1.25rem;
-  }
-    /* Statistics */
+@media screen and (max-width: 992px) {
+    /* Main banner */
+    .main-section__image {
+        display: none;
+    }
+    .main-section > div {
+        width: 100%;
+    }
+    /* Main banner */
 
     /* About me section */
     .about-me {
         padding: 2rem 0;
     }
-    .about-me__image img {
-        display: none;
-    }
-    .about-me > div {
-        width: 90%;
-    }
     /* About me section */
 
-    /* Services section */
-    .services {
+     /* Service section */
+     .services {
         padding: 2rem 0;
     }
     .service-card {
@@ -390,7 +384,14 @@
         margin-right: 0;
         margin-bottom: 1.25rem;
     }
-    /* Services section */
+     /* Service section */
+
+    /* Statistics section */
+    .statistics {
+        padding-top: 2rem;
+    }
+    /* Statistics section */
+
 
     /* TEstiomial */
     .clients {
@@ -403,21 +404,13 @@
     }
     /* TEstiomial */
 
-    /* Portfolio section */
-    .portfolio {
-        padding: 2rem 0;
-    }
-    .portfolio-item {
-        width: 100%;
-        padding: 0;
-        padding-bottom: 0.62rem;
-    }
-    .portfolio-item-1,
-    .portfolio-item-2,
+    /* Portfolio item */
     .portfolio-item-3{
-        position: static;
+        position: absolute;
+        top: 230px;
+        right: 0;
     }
-    /* Portfolio section */
+    /* Portfolio item */
 
     /* Blog section */
     .blog {
@@ -426,6 +419,7 @@
     .blog-item {
         width: 100%;
         margin-right: 0;
+        box-sizing: border-box;
     }
     .blog-item__info {
         padding: 0.87rem;
@@ -451,8 +445,57 @@
 
 
 
+}
 
+@media screen and (max-width: 767px) {
+    /* Main section */
+  .main-banner {
+      background-image: none;
+      min-height: auto;
+  }
+  .main-section__image {
+      display: none;
+  }
+  .main-section__action {
+      display: none;
+  }
+    /* Main section */
 
+    /* Statistics */
+  .statistics__item {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 1.25rem;
+      box-sizing: border-box;  
+    }
+    /* Statistics */
+
+    /* About me section */
+    .about-me__image img {
+        display: none;
+    }
+    .about-me > div {
+        width: 90%;
+    }
+    /* About me section */
+
+    /* Portfolio section */
+    .portfolio {
+        padding: 2rem 0;
+    }
+    .portfolio-item {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 0.62rem;
+    }
+    .portfolio-item-1,
+    .portfolio-item-2,
+    .portfolio-item-3{
+        position: static;
+    }
+    /* Portfolio section */
 
 
 }
