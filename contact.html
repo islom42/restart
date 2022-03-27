@@ -46,6 +46,11 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="main-hamburger">
+                    <span>
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                </div>
             </div>
         </header>
         <!--/Header section -->
@@ -58,8 +63,10 @@
                 </h3>
                 <form action="/server.php" method="get">
                     <textarea name="message" rows="20" placheholder="Enter your message"></textarea>
-                    <input type="text" placeholder="Your name" name="fname" class="half-row contact__first-name" >
-                    <input type="email" placeholder="example@gmail.com" name="email" class="half-row contact__email">
+                    <div class="half-flex">
+                        <input type="text" placeholder="Your name" name="fname" class="contact__first-name" >
+                    <input type="email" placeholder="example@gmail.com" name="email" class="contact__email">
+                    </div>
                     <input type="text" placeholder="Subject" name="subject">
                     <button type="submit" class="button contact__action">Send Message</button>
                 </form>

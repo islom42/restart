@@ -8,12 +8,11 @@
     min-height: 860px;
 }
 .main-section{
-    padding: 7.5rem 1.87rem;
+    padding: 7.5rem 0;
+    display: flex;
+    justify-content: space-between;
 }
-.main-section > div{
-    width: 50%;
-    float: left;
-}
+
 .main-section__image{
     text-align: right;
 }
@@ -60,9 +59,10 @@
 /* Statistics styles */
 .statistics{
     padding-top: 6.25rem;
+    display: flex;
+    justify-content: center;
 }
 .statistics__item{
-    display: inline-block;
     width: 150px;
     background-color: #e8e9eb;
     padding: 0.3rem 0.625rem;
@@ -95,10 +95,11 @@
 /* About me styles */
 .about-me{
     padding: 6.25rem 0;
+    display: flex;
+    align-items: center;
 }
 .about-me > div{
-    width: 50%;
-    float: left;
+    flex: 1;
 }
 .about-me__image img{
     width: 90%;
@@ -119,14 +120,20 @@
 .services{
     padding: 6.25rem 0;
 }
+.services-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .service-card{
-    display: inline-block;
     width: 30%;
     padding: 3.75rem 1.87rem;
     background-color: #e8e9eb;
     margin-right: 3%;
     text-align: center;
     box-sizing: border-box;
+    transition: all .3s ease-in-out;
 }
 .service-card__title{
     color: #05364d;
@@ -165,16 +172,19 @@
 .clients{
     padding: 6.25rem 0;
 }
+.client-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .client-item > div {
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
+    flex: 1;
 }
 .client-item__image img {
     width: 100%;
 }
 .client-item__info {
-    padding: 3.12rem 0 0 3.12rem;
+    padding-left: 3.12rem;
 }
 .client-item__name {
     font-size: 1.25rem;
@@ -288,9 +298,12 @@
 }
 .blog-items{
     margin-top: 3.12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .blog-item {
-    display: inline-block;
     width: 30%;
     margin-right: 3%;
     box-sizing: border-box;
@@ -306,8 +319,12 @@
 .blog-item:hover .blog-item__image img{
     transform: scale(1.1);
 }
+.blog-item__image {
+    overflow: hidden;
+}
 .blog-item__image img {
     width: 100%;
+    vertical-align: middle;
 }
 .blog-item__info {
     background-color: #F8FAFF;
@@ -352,9 +369,11 @@
 /* Partners styles */
 .partners{
     padding-top: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .partner {
-    display: inline-block;
     padding: 0 1.87rem;
 }
 /* Partners styles */
@@ -373,6 +392,9 @@
     .about-me {
         padding: 2rem 0;
     }
+    .about-me__image {
+        display: none;
+    }
     /* About me section */
 
      /* Service section */
@@ -389,6 +411,7 @@
     /* Statistics section */
     .statistics {
         padding-top: 2rem;
+        flex-wrap: wrap;
     }
     /* Statistics section */
 
@@ -397,9 +420,11 @@
     .clients {
         padding: 2rem 0;
     }
+    .client-item {
+        flex-direction: column;
+    }
     .client-item > div {
         width: 100%;
-        float: none;
         padding: 0;
     }
     /* TEstiomial */

@@ -150,6 +150,9 @@
 
 
 /* Core styles */
+html {
+    scroll-behavior: smooth;
+}
 body{
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -231,21 +234,16 @@ a {
     z-index: 10;
 }
 .main-hamburger {
-    display: inline-block;
-    transform: translateX(5000%);
+    flex-grow: 1;
     text-align: right;
     display: none;
 }
-.main-header__brand{
-    display: inline-block;
-    vertical-align: middle;
+.main-header .container {
+    display: flex;
+    align-items: center;
 }
 .main-header__brand img{
     width: 64px;
-}
-.main-navigation{
-    display: inline-block;
-    vertical-align: middle;
 }
 .main-navigation__item{
     display: inline-block;
